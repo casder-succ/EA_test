@@ -14,8 +14,14 @@
 }
 
 body {
+    min-height: 100%;
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
+    font-style: normal;
+
+    background-image: url("../assets/images/left_fig.png"), url("../assets/images/right_fig.png");
+    background-position: top left, top right;
+    background-repeat: no-repeat;
 }
 
 .container {
@@ -40,6 +46,31 @@ body {
 
 .main {
     padding-top: 33px;
+}
+
+.greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 32px;
+}
+
+.greeting_title {
+    margin-bottom: 8px;
+
+    font-size: 72px;
+    line-height: 104%;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--darkblue);
+    opacity: 0.39;
+}
+
+.greeting_text {
+    max-width: 423px;
+    line-height: 1.5;
+    text-align: center;
 }
 
 .timer {
@@ -99,7 +130,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 12px;
+    row-gap: 10px;
 
     margin-bottom: 76px;
 }
@@ -109,8 +140,8 @@ a {
     justify-content: space-between;
     align-items: center;
 
-    max-width: 240px;
-    padding: 18px 28px;
+    min-width: 240px;
+    padding: 16px 22px 17px 28px;
 
     border-radius: 40px;
     background-color: var(--blue);
@@ -165,7 +196,7 @@ a {
     top: 8px;
     right: 8px;
 
-    padding: 11px;
+    padding: 11px 12px;
 
     outline: none;
     border: none;
