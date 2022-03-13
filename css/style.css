@@ -1,0 +1,64 @@
+:root {
+    --darkblue: #162C4E;
+    --red: #DF2224;
+    --blue: #1D4169;
+    --black_a08: rgba(0, 0, 0, 0.8);
+    --black_a04: rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+.footer {
+    width: 100%;
+    background-color: var(--darkblue);
+    height: 192px;
+    padding-top: 61px;
+}
+
+.footer_form {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.form_input {
+    width: 100%;
+    font-size: 18px;
+    line-height: 27px;
+    padding: 16px 0 16px 27px;
+    border: 1px solid var(--black_a08);
+    border-radius: 40px;
+    box-shadow: 0 0 50px var(--black_a04);
+
+}
+
+.form_input:focus {
+    outline: none;
+}
+
+.form_button {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    padding: 11px;
+    background-color: var(--red);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.form_button img {
+    width: 20px;
+    height: 20px;
+}
