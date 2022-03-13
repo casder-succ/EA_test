@@ -3,6 +3,13 @@ const REGULAR_EMAIL = /^[^@]+@\w+(\.\w+)+\w$/;
 document.addEventListener("DOMContentLoaded", () => {
     const timer = document.querySelector('.timer');
     const sendForm = document.querySelector('.sendmail_form');
+    const popup = document.querySelector('.popup');
+
+    popup.querySelector('.popup_back').addEventListener('click', () => closePopup(popup))
+
+    popup.querySelectorAll('.popup_close').forEach((btn) => {
+        btn.addEventListener('click', () => closePopup(popup));
+    })
 
     sendForm.addEventListener('submit', sendMail);
 
@@ -11,7 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const sendInput = sendForm.querySelector('.form_input');
 
-        console.log(REGULAR_EMAIL.test(sendInput.value));
+        if (!REGULAR_EMAIL.test(sendInput.value)) {
+            console.log('aaa')
+            const params = {
+                title: 'Ahtung!',
+                text: 'Email you entered isn\'t valid',
+            }
+
+            openPopup(popup, params);
+        }
+
 
     }
 
@@ -56,5 +72,17 @@ function setTimer(timerNode) {
     seconds.textContent = remaining.seconds >= 10 ? '' + remaining.seconds : '0' + remaining.seconds;
 
     setTimeout(() => setTimer(timerNode), 1e3);
+}
+
+function closePopup(popupNode) {
+    console.log('asd')
+    popupNode.classList.remove('active');
+}
+
+function openPopup(popupNode, parameters) {
+    popupNode.querySelector('.popup_title').textContent = parameters.title;
+    popupNode.querySelector('.popup_text').textContent = parameters.text;
+
+    popupNode.classList.add('active');
 }
 

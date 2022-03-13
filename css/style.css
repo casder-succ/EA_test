@@ -4,7 +4,10 @@
     --blue: #1D4169;
     --black_a08: rgba(0, 0, 0, 0.8);
     --black_a04: rgba(0, 0, 0, 0.4);
+    --black_a02: rgba(0, 0, 0, 0.2);
     --white: #ffffff;
+
+    --popup_border: rgba(19, 89, 120, 0.07);
 }
 
 * {
@@ -204,6 +207,105 @@ a {
     background-color: var(--red);
 }
 
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popup_back {
+    position: fixed;
+    inset: 0;
+
+    background: var(--black_a04) none repeat scroll 0 0;
+}
+
+.popup.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.popup_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transform: translateZ(0px);
+
+    width: 320px;
+    height: 370px;
+
+    padding: 24px;
+
+    background-color: var(--white);
+    border: 1px solid var(--popup_border);
+}
+
+.popup_close {
+    border: none;
+    cursor: pointer;
+
+    background-color: transparent;
+}
+
+.popup_close_small {
+    align-self: flex-end;
+
+    width: 20px;
+    height: 20px;
+
+    margin-bottom: 50px;
+}
+
+.popup_close_small img {
+    width: 100%;
+    height: 100%;
+}
+
+.popup_title {
+    margin-bottom: 30px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 104%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.popup_text {
+    margin-bottom: 30px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    color: var(--black_a08);
+}
+
+.popup_close_large {
+    padding: 16px 74px;
+
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--white);
+    border-radius: 40px;
+    background-color: var(--blue);
+}
+
 @media all and (max-width: 768px) {
     body {
         background-image: url("../assets/images/left_fig_2.png"), url("../assets/images/right_fig_2.png");
@@ -315,7 +417,7 @@ a {
     .timer_item:not(:last-child) {
         margin-right: 18px;
     }
-    
+
     .invite {
         row-gap: 15px;
 
