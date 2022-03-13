@@ -306,6 +306,19 @@ a {
     background-color: var(--blue);
 }
 
+@media all and (max-width: 1150px) {
+    body {
+        background-size: 30%, 30%;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    body {
+        background-size: 25%, 25%;
+    }
+}
+
+
 @media all and (max-width: 768px) {
     body {
         background-image: url("../assets/images/left_fig_2.png"), url("../assets/images/right_fig_2.png");
