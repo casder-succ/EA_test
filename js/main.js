@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const sendInput = sendForm.querySelector('.form_input');
 
         if (!REGULAR_EMAIL.test(sendInput.value)) {
-            console.log('aaa')
             const params = {
                 title: 'Ahtung!',
                 text: 'Email you entered isn\'t valid',
@@ -75,7 +74,6 @@ function setTimer(timerNode) {
 }
 
 function closePopup(popupNode) {
-    console.log('asd')
     popupNode.classList.remove('active');
 }
 
