@@ -185,6 +185,15 @@ a {
     box-shadow: 0 0 50px var(--black_a04);
 }
 
+.form_input:invalid {
+    border: 3px solid var(--red);
+}
+
+.form_input:invalid ~ .form_button {
+    top: 6px;
+    right: 8px;
+}
+
 .form_input:focus {
     outline: none;
 }

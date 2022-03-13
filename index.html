@@ -14,7 +14,7 @@
     <div class="container">
         <div class="header_logo">
             <a href="">
-                <img class="logo_img" src="assets/svg/header_logo.svg" alt="logo">
+                <img class="logo_img" src="./assets/svg/header_logo.svg" alt="logo">
             </a>
         </div>
     </div>
@@ -40,7 +40,7 @@
             </div>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="invite_link">
                 <p>Go to the event</p>
-                <img class="button_arrow" src="assets/svg/arrow_button.svg" alt="">
+                <img class="button_arrow" src="./assets/svg/arrow_button.svg" alt="">
             </a>
         </div>
     </div>
@@ -49,9 +49,13 @@
 <footer class="footer">
     <div class="container">
         <form action="" class="footer_form">
-            <input class="form_input" type="text" name="" id="" placeholder="Enter your Email and get notified">
-            <button class="form_button">
-                <img class="button_arrow" src="assets/svg/arrow_button.svg" alt="">
+            <input class="form_input" type="text" name="" id=""
+                   placeholder="Enter your Email and get notified"
+                   pattern="^[^@]+@\w+(\.\w+)+\w$"
+                   required
+            >
+            <button type="submit" class="form_button">
+                <img class="button_arrow" src="./assets/svg/arrow_button.svg" alt="">
             </button>
         </form>
     </div>
