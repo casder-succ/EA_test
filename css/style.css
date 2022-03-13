@@ -4,6 +4,7 @@
     --blue: #1D4169;
     --black_a08: rgba(0, 0, 0, 0.8);
     --black_a04: rgba(0, 0, 0, 0.4);
+    --white: #ffffff;
 }
 
 * {
@@ -17,29 +18,90 @@ body {
     font-size: 18px;
 }
 
+header, main, footer {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    height: 100vh;
+}
+
+.timer {
+    display: flex;
+
+    font-size: 72px;
+    line-height: 72px;
+    font-weight: 600;
+    color: var(--darkblue);
+}
+
+.timer_item {
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    min-width: 132px;
+}
+
+.timer_item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.timer_item:not(:last-child)::after {
+    content: ':';
+    position: absolute;
+    right: -20px;
+}
+
+.timer_item::before {
+    content: attr(data-content);
+
+    position: absolute;
+    bottom: -57px;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 132px;
+    height: 54px;
+
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--white);
+    background-image: url("../assets/svg/time_after.svg");
+}
+
 .footer {
     width: 100%;
-    background-color: var(--darkblue);
     height: 192px;
+
     padding-top: 61px;
+
+    background-color: var(--darkblue);
 }
 
 .footer_form {
     position: relative;
+
+    margin: 0 auto;
+
     width: 100%;
     max-width: 440px;
-    margin: 0 auto;
 }
 
 .form_input {
     width: 100%;
+
+    padding: 16px 0 16px 27px;
+
     font-size: 18px;
     line-height: 27px;
-    padding: 16px 0 16px 27px;
     border: 1px solid var(--black_a08);
     border-radius: 40px;
     box-shadow: 0 0 50px var(--black_a04);
-
 }
 
 .form_input:focus {
@@ -48,14 +110,17 @@ body {
 
 .form_button {
     position: absolute;
-    right: 8px;
     top: 8px;
+    right: 8px;
+
     padding: 11px;
-    background-color: var(--red);
-    border: none;
+
     outline: none;
-    cursor: pointer;
+    border: none;
     border-radius: 50%;
+
+    cursor: pointer;
+    background-color: var(--red);
 }
 
 .form_button img {
