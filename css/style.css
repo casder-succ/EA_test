@@ -164,7 +164,7 @@ a {
     background-color: var(--darkblue);
 }
 
-.footer_form {
+.sendmail_form {
     position: relative;
 
     margin: 0 auto;
@@ -183,15 +183,6 @@ a {
     border: 1px solid var(--black_a08);
     border-radius: 40px;
     box-shadow: 0 0 50px var(--black_a04);
-}
-
-.form_input:invalid {
-    border: 3px solid var(--red);
-}
-
-.form_input:invalid ~ .form_button {
-    top: 6px;
-    right: 8px;
 }
 
 .form_input:focus {
@@ -276,7 +267,7 @@ a {
         padding: 60px 0;
     }
 
-    .footer_form {
+    .sendmail_form {
         max-width: 360px;
     }
 
@@ -336,7 +327,7 @@ a {
         padding: 50px 0;
     }
 
-    .footer_form {
+    .sendmail_form {
         max-width: 280px;
     }
 }
