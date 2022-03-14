@@ -92,6 +92,7 @@ function sendMail(evt, sendForm, resultNode) {
             "content-type": "application/json",
             "x-rapidapi-host": "rapidprod-sendgrid-v1.p.rapidapi.com",
             "x-rapidapi-key": "709c9481b3msh63cc2969d037d98p1f5a90jsn255f9e3036f9",
+            'Access-Control-Allow-Origin': '*',
         },
         body: {
             "personalizations": [
