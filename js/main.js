@@ -86,41 +86,28 @@ function sendMail(evt, sendForm, resultNode) {
 
     openPopup(resultNode, {title: 'sending...'});
 
-    fetch("https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send", {
+    fetch("index.php", {
         method: "POST",
-        mode: "no-cors",
         headers: {
-            "content-type": "application/json",
-            "x-rapidapi-host": "rapidprod-sendgrid-v1.p.rapidapi.com",
-            "x-rapidapi-key": "709c9481b3msh63cc2969d037d98p1f5a90jsn255f9e3036f9",
-            // 'Access-Control-Allow-Origin': 'https://sendgrid.api-docs.io',
+            'Content-Type': 'application/json'
         },
-        body: {
-            "personalizations": [
-                {
-                    "to": [{"email": email}],
-                    "subject": "Event inviting"
-                }
-            ],
-            "from": {
-                "email": "from_address@example.com"
-            },
-            "content": [
-                {
-                    "type": "text/plain",
-                    "value": "Hi! We wanna invite you to our event: https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                }
-            ]
-        }
+        body: JSON.stringify({
+            email,
+            subject: "Event inviting",
+            content: "Hi! We wanna invite you to our event: https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        })
     })
-        .then(() => openPopup(resultNode, {
-                title: 'Success!',
-                text: 'You have successfully subscribed to the email newsletter',
-            })
-        )
-        .catch(() => openPopup(resultNode, {
+        .then((response) => response.status).then((status) => {
+        if (status.toString().startsWith('4') || status.toString().startsWith('5')) {
+            openPopup(resultNode, {
                 title: 'Error:(',
                 text: 'We can\'t send your data',
             })
-        )
+        } else {
+            openPopup(resultNode, {
+                title: 'Success!',
+                text: 'You have successfully subscribed to the email newsletter',
+            })
+        }
+    })
 }
