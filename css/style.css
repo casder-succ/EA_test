@@ -2,6 +2,7 @@
     --darkblue: #162C4E;
     --red: #DF2224;
     --blue: #1D4169;
+    --light_blue: #15519b;
     --black_a08: rgba(0, 0, 0, 0.8);
     --black_a04: rgba(0, 0, 0, 0.4);
     --black_a02: rgba(0, 0, 0, 0.2);
@@ -149,6 +150,20 @@ a {
     border-radius: 40px;
     background-color: var(--blue);
     color: var(--white);
+
+    transition: all .3s;
+}
+
+.invite_link img {
+    transition: all .3s;
+}
+
+.invite_link:hover {
+    background-color:  var(--light_blue);
+}
+
+.invite_link:hover img {
+    margin-right: -10px;
 }
 
 .invite_link:visited {
