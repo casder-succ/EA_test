@@ -75,12 +75,6 @@ function sendMail(evt, sendForm, resultNode) {
     const email = sendForm.email.value;
 
     if (!REGULAR_EMAIL.test(email)) {
-        const params = {
-            title: 'Oops!',
-            text: 'Email you entered isn\'t valid',
-        }
-
-        openPopup(resultNode, params);
         return;
     }
 

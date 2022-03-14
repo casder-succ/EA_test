@@ -196,6 +196,8 @@ a {
 }
 
 .form_input {
+    position: relative;
+
     width: 100%;
 
     padding: 16px 60px 16px 27px;
@@ -205,6 +207,10 @@ a {
     border: 1px solid var(--black_a08);
     border-radius: 40px;
     box-shadow: 0 0 50px var(--black_a04);
+}
+
+.form_input:invalid {
+    border: 3px solid var(--red);
 }
 
 .form_input:focus {
