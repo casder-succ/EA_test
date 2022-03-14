@@ -49,6 +49,10 @@ body {
     height: 100%;
 }
 
+.main {
+    min-height: calc(100vh - (120px + 194px + 93px));
+}
+
 .greeting {
     display: flex;
     flex-direction: column;
@@ -342,6 +346,10 @@ a {
     .header {
         padding-top: 100px;
         margin-bottom: 166px;
+    }
+
+    .main {
+        min-height: 0;
     }
 
     .greeting_title {

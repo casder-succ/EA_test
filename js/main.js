@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const sendForm = document.querySelector('#mail_form');
     const popup = document.querySelector('.popup');
 
+    document.addEventListener('keydown', (evt) => {
+        if (evt.key === 'Escape') closePopup(popup);
+    })
+
     popup.querySelector('.popup_back').addEventListener('click', () => closePopup(popup))
     popup.querySelectorAll('.popup_close').forEach((btn) => {
         btn.addEventListener('click', () => closePopup(popup));
